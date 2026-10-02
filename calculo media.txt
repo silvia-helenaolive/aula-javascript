@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Pergunta quantas notas existem
+        let quantidade = prompt("Quantas notas você deseja informar?");
+        quantidade = parseInt(quantidade);
+
+        let soma = 0;
+
+        // Repete para pegar cada nota
+        for (let i = 1; i <= quantidade; i++) {
+            let nota = prompt("Informe a nota " + i + ":");
+            soma += parseFloat(nota);
+        }
+
+        // Calcula a média dividindo pelo total de notas
+        let media = soma / quantidade;
+
+        // Mostra o resultado
+        alert("Foram informadas " + quantidade + " notas.\nA média final é: " + media.toFixed(2));
+
+    </script>
+</body>
+
+</html>

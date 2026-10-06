@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .minha-caixa {
+            background-color: hotpink;
+            min-height: 200px;
+            min-width: 300px;
+            padding: 10px;
+        }
+
+        .item-lista {
+            background-color: aquamarine;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="minha-caixa">
+        <form action="#" method="post" id="meu-formulario">
+            <input type="text" name="titulo" id="titulo">
+            <button id="meubotao" type="submit">Adicionar notas</button>
+        </form>
+
+    </div>
+    <script>
+        let caixa = document.querySelector(".minha-caixa")
+        let botao = document.querySelector("#meubotao")
+        let Inputtext = document.querySelector("#titulo")
+
+        botao.addEventListener("click", function (evento) {
+            evento.preventDefault()
+            let minhadiv = document.createElement("div")
+            minhadiv.textContent = Inputtext.value
+            minhadiv.classList.add("item-lista", "outra-classe")
+            minhadiv.classList.remove("outra-classe")
+            caixa.appendChild(minhadiv);
+            Inputtext.value = ""
+
+            //document.body.insertBefore(minhadiv, caixa)
+
+        })
+        console.log(caixa)
+
+    </script>
+</body>
+
+</html>

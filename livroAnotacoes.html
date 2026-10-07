@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .minha-caixa {
+            background-color: hotpink;
+            min-height: 200px;
+            min-width: 300px;
+            padding: 10px;
+        }
+
+        .item-lista {
+            background-color: aquamarine;
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="minha-caixa">
+        <form action="#" method="post" id="meu-formulario">
+            <input type="text" name="titulo" id="titulo">
+            <button id="meubotao" type="submit">Adicionar Div</button>
+        </form>
+    </div>
+    <script>
+        // let caixa = document.querySelector(".minha-caixa")
+        // let botao = document.querySelector("#meubotao")
+        // let inputtext = document.querySelector("#titulo")
+
+        // botao.addEventListener("click", function (evento) {
+        //     // if(caixa.textContent == "Minha Caixa") caixa.textContent = ""
+        //     // else caixa.textContent = "Minha Caixa"
+        //     evento.preventDefault()
+        //     let minhadiv = document.createElement("div")
+        //     minhadiv.textContent = inputtext.value
+        //     minhadiv.classList.add("item-lista", "outraclasse")
+        //     minhadiv.classList.remove("outraclasse")
+        //     caixa.appendChild(minhadiv);
+        //     inputtext.value = ""
+        // })
+        // console.log(caixa)
+
+        let anotacao = {
+            titulo: "Minha anotação",
+            descricao: "Descrição da minha anotação",
+            data: "07/10/2026"
+        }
+        console.log(anotacao);
+        // alert(anotacao['data'])
+        // alert(anotacao.data)
+
+
+        let livro_de_anotacoes = [
+            {
+                titulo: "Aula de amanhã",
+                descricao: "Reclamar do Enzo e lembrar de não passar perfume na sala",
+                data: "08/10/2026",
+                preco: 150
+            },
+            {
+                titulo: "Aula de sexta feira",
+                descricao: "Pegar carona pra ir pro Tech Summit",
+                data: "09/10/2026",
+                preco: 100
+            },
+            {
+                titulo: "Aula de quarta feira",
+                descricao: "Estudar",
+                data: "14/10/2026",
+                preco: 80
+            },
+            {
+                titulo: "Aula de quinta feira",
+                descricao: "Exercício",
+                data: "15/10/2026",
+                preco: 40
+            }
+        ]
+        console.log(livro_de_anotacoes[1].descricao);
+        livro_de_anotacoes[0].titulo = "Nova aula de amanhã"
+
+        let nova_anotacao = {
+            titulo: "Aula de terça-feira",
+            descricao: "Ainda nem sei o que vou ensinar",
+            data: "13/10/2026",
+            preco: 30
+        }
+        // livro_de_anotacoes[livro_de_anotacoes.length]=nova_anotacao
+        // livro_de_anotacoes.pop()
+        livro_de_anotacoes.push(nova_anotacao)
+
+        console.log(livro_de_anotacoes);
+
+        let minha_funcao = function imprimirTitulo(objeto) {
+            console.log(objeto.titulo);
+        }
+        // for (let index = 0; index < livro_de_anotacoes.length; index++) {
+        //     minha_funcao(livro_de_anotacoes[index])
+        // }
+        livro_de_anotacoes.forEach(minha_funcao)
+
+        //let outra_funcao = function maisbaratoque50(objeto) {
+        //return objeto.preco <= 50
+        //}
+        let outra_funcao = function caros(objeto) {
+            return objeto.preco > 50
+        }
+
+        console.log(livro_de_anotacoes.filter(outra_funcao));
+
+        //let mais_uma_funcao = function pagarmeia(anotacao) {
+        //return anotacao.preco/2
+        // }
+
+        console.log(livro_de_anotacoes.map(anotacao => anotacao.preco/2));
+    </script>
+</body>
+
+</html>
